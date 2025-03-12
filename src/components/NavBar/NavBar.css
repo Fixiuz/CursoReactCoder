@@ -24,5 +24,8 @@
     gap: 20px;
 }
 .itemMenu .nav-link{
-    color: rgb(10, 37, 185);
+    color: rgb(62, 63, 68);
+}
+.itemMenu .nav-link:hover{
+    color: rgb(255, 255, 255);
 }
