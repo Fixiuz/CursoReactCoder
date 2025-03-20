@@ -14,12 +14,12 @@ function Item({producto}){
                 <p>Quedan {producto.stock} disponibles</p>
                 <p>{producto.categoria}</p>
                 <img src={producto.img} alt=''/>
-                <div className='botones'>
+                {/* <div className='botones'>
                     <button onClick={()=>(setContador(contador+1))}>+</button>
                     <button onClick={()=>(setContador(contador-1))}>-</button>  
-                </div>
-                
-                <p>{contador}</p>
+                </div> */}
+                <button className='btn'>Agregar al carrito</button>
+                {/* <p>{contador}</p> */}
         </div> 
     
         
