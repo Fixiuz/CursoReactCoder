@@ -1,11 +1,11 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 import './ItemListConteiner.css';
 import productos from '../../productos';
 import Item from '../Item/Item';
 
 function ItemListConteiner(){
-  const[contador, setContador] = useState(0)
+  
   
   
   useEffect(() => {
@@ -16,7 +16,7 @@ function ItemListConteiner(){
      
       {productos.map(el => {
         return(
-          <Item producto ={el}/>
+          <Item key ={el.id} producto ={el}/>
         )
       })}
 
