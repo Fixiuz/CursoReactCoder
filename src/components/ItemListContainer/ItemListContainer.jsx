@@ -1,24 +1,34 @@
 import {useEffect,useState} from 'react';
 
-import './ItemListConteiner.css';
+import './ItemListContainer.css';
 import productos from '../../productos';
 import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
-
-function ItemListConteiner(){
+import {fetchData} from '../../fetchData';
+function ItemListContainer(){
   
   
   const[loading,setLoading] = useState(true);
   useEffect(() => {
+    
+    fetchData(true)
+    .then(response => console.log(response))
+    .catch(error => console.error(error))
+
+
+
+    
     setTimeout(() => {
+      
+      
       setLoading(false);
-    }, 2000);
+      
+    
+    }, 2000); 
   }, []);
-  // useEffect(() => {
-  //   console.log('esta es mi lista de productos' , productos);
-  // }, []);
+
   return (
-    <div className='conteinerProductos'>
+    <div className='containerProductos'>
      
       {
         loading ? 
@@ -34,4 +44,4 @@ function ItemListConteiner(){
     </div>
   );
 };
-export default ItemListConteiner
+export default ItemListContainer

@@ -1,11 +1,11 @@
 import './Item.css'
-import {useState} from 'react';
+// import {useState} from 'react';
 
 
 function Item({producto}){
-    console.log(producto);
-    const {nombre,precio,descripcion,stock,categoria,img} = producto;
-    const [contador, setContador] = useState(0);
+    // console.log(producto);
+    const {nombre,precio,descripcion,stock,categoria} = producto;
+    // const [contador, setContador] = useState(0);
     return (
             <div className='productos'>
                 <h2>{nombre}</h2>
@@ -13,7 +13,7 @@ function Item({producto}){
                 <p>{producto.descripcion}</p>
                 <p>Quedan {producto.stock} disponibles</p>
                 <p>{producto.categoria}</p>
-                <img src={producto.img} alt=''/>
+                
                 {/* <div className='botones'>
                     <button onClick={()=>(setContador(contador+1))}>+</button>
                     <button onClick={()=>(setContador(contador-1))}>-</button>  

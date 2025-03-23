@@ -1,5 +1,5 @@
 
-const productos = [
+export const productos = [
     {
         id: 1,
         nombre: 'Producto 1',
@@ -7,7 +7,7 @@ const productos = [
         descripcion: 'Descripcion del producto 1',
         stock: 55,
         categoria: 'llaveros',
-        img:''
+        
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const productos = [
         descripcion: 'Descripcion del producto 2',
         stock: 45,
         categoria: 'llaveros',
-         img:''
+        
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const productos = [
         descripcion: 'Descripcion del producto 3',
         stock: 20,
         categoria: 'llaveros',
-         img:''
+        
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const productos = [
         descripcion: 'Descripcion del producto 4',
         stock: 38,
         categoria: 'llaveros',
-         img:''
+        
     }
 ]
 export default productos;

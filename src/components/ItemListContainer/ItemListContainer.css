@@ -6,7 +6,7 @@
 body {
     background-color: rgb(116, 107, 106);
 }
-.conteinerProductos{
+.containerProductos{
     display: flex;
     justify-content: space-evenly;
     align-items: center;

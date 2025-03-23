@@ -1,51 +1,41 @@
 .loader {
-    width: 60px;
-    height: 60px;
-    display: block;
-    margin: 20px auto;
-    position: relative;
-    background: radial-gradient(ellipse at center, #0004ff 69%, rgba(0, 0, 0, 0) 70%), linear-gradient(to right, rgba(0, 0, 0, 0) 47%, #FFF 48%, #FFF 52%, rgba(0, 0, 0, 0) 53%);
-    background-size: 20px 20px , 20px auto;
-    background-repeat: repeat-x;
-    background-position: center bottom, center -5px;
-    box-sizing: border-box;
-  }
-  .loader::before,
-  .loader::after {
-    content: '';  
-    box-sizing: border-box;
+  position: fixed; /* Cambiado a fixed para centrar en toda la pantalla */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajustar el centro */
+  animation: flix 3s ease-in infinite alternate;
+}
+.loader:before {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #fff ;
+  background-image:
+    radial-gradient(circle 12px at 22px 22px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 10px at 6px 40px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 14px at 31px -6px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px at 40px 30px, #FF3D00 100%, transparent 0);
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+.loader:after {
+    content: '';
     position: absolute;
-    left: -20px;
-    top: 0;
-    width: 20px;
-    height: 60px;
-    background: radial-gradient(ellipse at center, #ffffff 69%, rgba(0, 0, 0, 0) 70%), linear-gradient(to right, rgba(0, 0, 0, 0) 47%, #FFF 48%, #FFF 52%, rgba(0, 0, 0, 0) 53%);
-    background-size: 20px 20px , 20px auto;
-    background-repeat: no-repeat;
-    background-position: center bottom, center -5px;
-    transform: rotate(0deg);
-    transform-origin: 50% 0%;
-    animation: animPend 1s linear infinite alternate;
+    top: 0%;
+    transform: translate(-50% , -100%);
+    left: 50%;
+    width: 24px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50px 50px 0 0;
   }
-  .loader::after {
-    animation: animPend2 1s linear infinite alternate;
-    left: 100%;
-  }
-  
-  @keyframes animPend {
-    0% {
-      transform: rotate(22deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-  }
-  
-  @keyframes animPend2 {
-    0%, 55% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-22deg);
-    }
-  }
+
+@keyframes flix {
+  0%  , 60% { transform: rotate(-10deg)}
+  100%  , 30% , 80% { transform: rotate(5deg)}
+}
+@keyframes rotate {
+  100%   { transform: rotate(360deg)}
+}
