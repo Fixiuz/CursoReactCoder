@@ -9,7 +9,7 @@ function NavBar() {
   return (
     <Navbar className='menu'>
       <div className="logo-container">
-        <img src="" alt="logo" />
+        <img className='logo' src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo_nike_principal.jpg" alt="logo" />
       </div>
       
       <Navbar.Toggle aria-controls="navbar-nav" />

@@ -29,3 +29,6 @@
 .itemMenu .nav-link:hover{
     color: rgb(255, 255, 255);
 }
+.logo {
+    height: 100px;
+}
