@@ -1,5 +1,6 @@
 
 import './ItemDetail.css'
+import ItemCount from '../components/ItemCount/ItemCount';
 // import {useState} from 'react';
 
 
@@ -19,6 +20,8 @@ function ItemDetail({producto, volverAlInicio}){
                     <button onClick={()=>(setContador(contador+1))}>+</button>
                     <button onClick={()=>(setContador(contador-1))}>-</button>  
                 </div> */}
+                <ItemCount stock = {stock}/> 
+                
                 <button className='btn'>Agregar al carrito</button>
                 <button className='btn'onClick={volverAlInicio}>Volver al incio </button>
 
