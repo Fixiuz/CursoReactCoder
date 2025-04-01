@@ -3,30 +3,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap'; 
 import CartWidget from '../CartWidget/CartWidget';
 import React from 'react';
-
+import { Link } from 'react-router';
 
 function NavBar() {
   return (
-    <Navbar className='menu'>
-      <div className="logo-container">
-        <img className='logo' src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo_nike_principal.jpg" alt="logo" />
+    <header className='menu'>
+      <div className='logo-container'>
+        <img className='logo' src="src\assets\logos\Logo_k3D.png" alt="logo" />
       </div>
-      
-      <Navbar.Toggle aria-controls="navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="menu-container">
+      <nav className='menu-container' > 
+        
+        <ul className='itemMenu'>
+          <li><Link to="/">Inicio</Link></li>
+          {/* <li><Link to="/productos">Productos</Link></li>
+          <li><Link to="/contacto">Contacto</Link></li> */}
+          <li>
+            <div>
+              <Link to="/carrito"><CartWidget/></Link>
+            </div>
+          </li>
 
-        <Nav className= 'itemMenu'>
-          <Nav.Link href="#inicio">Inicio</Nav.Link>
-          <Nav.Link href="#productos">Productos</Nav.Link>
-          <Nav.Link href="#contacto">Contacto</Nav.Link>
-          
-        </Nav>
-      </Navbar.Collapse>
-      
-      <div className='carrito'>
-        <CartWidget/>
-      </div>
-    </Navbar>
+        </ul>
+      </nav>
+     
+    </header>
   );
 }
 

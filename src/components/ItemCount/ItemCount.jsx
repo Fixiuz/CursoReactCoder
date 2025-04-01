@@ -2,12 +2,10 @@ import { useState } from 'react';
 import './ItemCount.css';
 
 
-function ItemCount({stock, nombreDelProducto}) {
-  
-  const [contador, setContador] = useState(0);
+function ItemCount({stock, nombreDelProducto, contador, setContador}){ 
   
 
-  
+
   function modificarContador(operacion){
     if(operacion === '+'){
       if(contador < stock){
@@ -25,10 +23,7 @@ function ItemCount({stock, nombreDelProducto}) {
     
     
   };
-  function  agregarAlCarrito(){
-    alert(`Vas a agregar ${contador} unidades de: ${nombreDelProducto} al carrito`); 
-    setContador(0);   
-  } 
+ 
   return (
       <div className='botonCompleto'>
         <div className='items'>
@@ -36,7 +31,7 @@ function ItemCount({stock, nombreDelProducto}) {
           <p>{contador}</p>
           <button className='btn' onClick={() => modificarContador('+')}>+</button>
         </div>
-        <button className='btn' style={{with: '15rem'}} onClick={() => agregarAlCarrito()}>Agregar al carrito</button>
+        {/* <button className='btn' style={{with: '15rem'}} onClick={() => agregarAlCarrito()}>Agregar al carrito</button> */}
       </div>
       
 
