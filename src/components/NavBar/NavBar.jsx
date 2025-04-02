@@ -15,8 +15,8 @@ function NavBar() {
         
         <ul className='itemMenu'>
           <li><Link to="/">Inicio</Link></li>
-          {/* <li><Link to="/productos">Productos</Link></li>
-          <li><Link to="/contacto">Contacto</Link></li> */}
+          <li><Link to="/categoria/llaveros">Llaveros</Link></li>
+          <li><Link to="/categoria/figuras">Figuras</Link></li>
           <li>
             <div>
               <Link to="/carrito"><CartWidget/></Link>

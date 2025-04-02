@@ -5,39 +5,31 @@ import './ItemListContainer.css';
 import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
 import {fetchData} from '../../fetchData';
-import ItemDetail from '../../ItemDetail/ItemDetail';
+import { useParams } from 'react-router';
 function ItemListContainer(){
   
   
   const[loading,setLoading] = useState(true);
-  const [todosLosProductos, setTodosLosProductos] = useState([null]);
-  const [productoFiltrado, setProductoFiltrado] = useState(null);
-
+  const [todosLosProductos, setTodosLosProductos] = useState(null);
+ 
+  const {categoria} = useParams();
+    
   useEffect(() => {
-    
-    fetchData(false)
-    .then(response => {
-      setTodosLosProductos(response);
-      
-      setTimeout(() => {
-        setLoading(false);
-      }, 500); // Cambia el tiempo según tus necesidades
-      setLoading(false);
-    }) 
-    .catch(error => console.error(error))
-
-
-
-    
-    setTimeout(() => {
+    if(!todosLosProductos){
+      fetchData()
+        .then(response => {
+          setTodosLosProductos(response);
+          
+          setTimeout(() => {
+            setLoading(false);
+          }, 500); // Cambia el tiempo según tus necesidades
+        }) 
+        .catch(error => console.error(error)); 
+    }
       
       
-      setLoading(false);
-      
-    
-    }, 2000); 
-  }, []);
-
+  }, [categoria]);
+  
   return (
     
     loading ?
@@ -45,18 +37,27 @@ function ItemListContainer(){
       :
       
       <div>
+
         <div className='containerProductos'>
-          {todosLosProductos.map(el => {
+          {
+          categoria ? 
+           todosLosProductos.filter(el => el.categoria === categoria).map(el => {
             return(
-              <Item key ={el.id} producto ={el} filtrarProducto={setProductoFiltrado}/>
+              <Item key ={el.id} producto={el}  />
             );
-          })}
+          })
+          :
+          todosLosProductos.map(el => {
+            return(
+              <Item key ={el.id} producto={el}  />
+            );
+          })
+          }
+         
       
       
         </div>
-        {
-          productoFiltrado && <ItemDetail producto={productoFiltrado} volverAlInicio={()=> setProductoFiltrado(null)}/>
-        }
+       
       </div>
     
   );

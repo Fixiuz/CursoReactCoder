@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 // import {useState} from 'react';
 
 
-function Item({producto, filtrarProducto}){
+function Item({producto}){
     // console.log(producto);
     const {id,nombre,precio,descripcion,stock,categoria} = producto;
     // const [contador, setContador] = useState(0);
@@ -24,7 +24,6 @@ function Item({producto, filtrarProducto}){
         <div className='productos'>
             <h2>{nombre}</h2>
             <p>${precio}</p>
-            
             <p>Quedan {stock} disponibles</p> 
             <button className='btn'onClick={()=> agregarAlCarrito(producto)}>Agregar al carrito</button>
             <Link to={`/detalle/${id}`}>
