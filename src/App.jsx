@@ -5,7 +5,8 @@ import Products from './components/Products/Products';
 import ItemCount from './components/ItemCount/ItemCount';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Route, Routes } from 'react-router';
-import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
 
 
 
@@ -22,8 +23,8 @@ function App() {
        <Routes>
           <Route path='/' element ={<ItemListContainer/>} />
           <Route path='/categoria/:categoria' element={<ItemListContainer/>} />
-          <Route path='/detalle/:id' element={<ItemDetail/>} />
-          
+          <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+
           <Route path='*' element={<p> 404 NOT FOUND </p>} />
 
 

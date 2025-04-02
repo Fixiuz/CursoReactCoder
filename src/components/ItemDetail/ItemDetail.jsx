@@ -62,11 +62,7 @@ function ItemDetail(){
                 
                 <p>{producto.descripcion}</p>
                 <p>Quedan {producto.stock} disponibles</p>                
-                <ItemCount stock = {producto.stock} contador = {contador} setContador = {setContador}/> 
-                         
-                 <p>Detalle del producto Seleccionado</p>
-            
-            
+                <ItemCount stock = {producto.stock} contador = {contador} setContador = {setContador}/>   
                 <button className='btn' onClick={()=> agregarAlCarrito(producto)}>Agregar al carrito</button>
                 <Link to={'/'}>
                     <button className='btn'>Volver al incio </button>
